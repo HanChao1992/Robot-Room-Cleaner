@@ -7,9 +7,17 @@
 
 Room::Room() {
   std::ifstream inFile;
-
-  try {
-    inFile.open("room1.txt");
+  bool gotFile = false;
+  while(!gotFile) {
+    std::string fileName = "";
+    std::cout << "Please indicate the room file you want use:(e.g room1, room2) ";
+    getline(std::cin, fileName);
+    inFile.open(fileName + ".txt");
+    if (!inFile.is_open()) {
+      std::cout << "Failed to find room file." << std::endl;
+      continue;
+    }
+    gotFile = true;
     std::string line;
     int lineCount = 0;
     while(getline(inFile, line)) {
@@ -31,9 +39,7 @@ Room::Room() {
       }
     }
   }
-  catch(int e) {
-    std::cout << "Failed to find room file." << std::endl;
-  }
+
   robot = new Robot(this);
   placeRobot();
   inFile.close();

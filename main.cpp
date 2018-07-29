@@ -1,11 +1,6 @@
 #include "solution.h"
 
 
-
-
-
-
-
 int main() {
 
   Room r1;
