@@ -55,7 +55,8 @@ void Room::displayRoom() {
     case Direction::left: faceString = "left"; break;
     case Direction::right: faceString = "right"; break;
   }
-  std::cout << std::endl<< "Robot is at (" << robotPos->x << ", " << robotPos->y << ") facing " << faceString << '\r' << std::flush;
+  std::cout << std::endl<< "Robot is at (" << robotPos->x << ", " << robotPos->y << ") facing " << faceString << '\r' << std::endl;
+  std::cout << "Robot has moved " << robotStep << " steps."<< std::flush;
 }
 
 Robot* Room::getRobot() {
@@ -69,6 +70,7 @@ bool Room::robotCanMove() {
         setRobot(false);
         robotPos->y++;
         setRobot(true);
+        robotStep++;
         return true;
       }
       return false;
@@ -77,6 +79,7 @@ bool Room::robotCanMove() {
         setRobot(false);
         robotPos->y--;
         setRobot(true);
+        robotStep++;
         return true;
       }
       return false;
@@ -85,6 +88,7 @@ bool Room::robotCanMove() {
         setRobot(false);
         robotPos->x--;
         setRobot(true);
+        robotStep++;
         return true;
       }
       return false;
@@ -93,6 +97,7 @@ bool Room::robotCanMove() {
         setRobot(false);
         robotPos->x++;
         setRobot(true);
+        robotStep++;
         return true;
       }
       return false;

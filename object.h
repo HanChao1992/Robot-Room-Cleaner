@@ -1,6 +1,7 @@
 #ifndef _OBJECT_HEADER_
 #define _OBJECT_HEADER_
 
+// Item type
 enum class Item {
   blank,
   wall,

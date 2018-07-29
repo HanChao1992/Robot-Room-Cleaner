@@ -1,5 +1,6 @@
 #include "robot.h"
 #include "room.h"
+#include <iostream>
 
 
 Robot::Robot(Room* room) {
@@ -10,6 +11,9 @@ Robot::Robot(Room* room) {
 Robot::Robot(Direction dir, Room* room) : dir(dir), room(room) {}
 
 bool Robot::move() {
+  usleep(sleepTime);
+  std::cout << "\x1B[2J\x1B[H";
+  room->displayRoom();
   return room->robotCanMove();
 }
 

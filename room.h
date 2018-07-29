@@ -10,6 +10,7 @@ private:
   std::vector<std::vector<Grid*>> layout;
   int maxWidth;
   int maxDepth;
+  int robotStep = 0;
 
   Robot *robot;
   Coordinate *robotPos;

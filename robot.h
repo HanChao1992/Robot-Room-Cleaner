@@ -1,7 +1,7 @@
 #ifndef _ROBOT_HEADER_
 #define _ROBOT_HEADER_
 
-//#include "room.h"
+#include <unistd.h>
 
 class Room;
 
@@ -17,6 +17,7 @@ class Robot{
 private:
   Direction dir;
   Room* room;
+  const int sleepTime = 50000;
 
 public:
   Robot(Room *room);

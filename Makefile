@@ -1,6 +1,6 @@
 CXX = g++
 CXXFLAGS = -std=c++14 -Werror -Wall -MMD
-OBJECTS = object.o grid.o room.o robot.o main.o
+OBJECTS = object.o grid.o room.o robot.o main.o solution.o
 DEPENDS = ${OBJECTS:.o=.d}
 EXEC = robotRoomCleaner
 
