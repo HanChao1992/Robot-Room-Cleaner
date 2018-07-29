@@ -1,34 +1,26 @@
 #include "solution.h"
 
 void Solution::cleanRoom(Robot *rob, Room *room, Coordinate curPos) {
-  //std::cout << "at "
-  if (visited[curPos.x][curPos.y] == true) {
-    //clearScreen();
-    //room->displayRoom();
-    return;
-  }
-  else {
-    visited[curPos.x][curPos.y] = true;
-    rob->clean();
+  rob->clean();
+  visited[curPos.x][curPos.y] = true;
 
-    for (int i = 0; i < 4; i++) {
+  for (int i = 0; i < 4; i++) {
+    Coordinate newPos = getPos(rob, curPos, true);
+    if (!visited[newPos.x][newPos.y]) {
       if (rob->move()) {
-        cleanRoom(rob,room, getPos(rob, curPos, true));
-        rob->turnLeft();
-        rob->turnLeft();
-        rob->move();
-        //clearScreen();
-        //room->displayRoom();
-        rob->turnLeft();
-        rob->turnLeft();
-        //getPos(rob, curPos, false);
+        cleanRoom(rob, room, newPos);
+      } else {
+        visited[newPos.x][newPos.y] = true;
       }
-      rob->turnRight();
     }
-
+    rob->turnRight();
   }
-  //clearScreen();
-  //room->displayRoom();
+
+  rob->turnLeft();
+  rob->turnLeft();
+  rob->move();
+  rob->turnLeft();
+  rob->turnLeft();
 }
 
 
