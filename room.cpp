@@ -41,7 +41,6 @@ Room::Room() {
 }
 
 void Room::displayRoom() {
-  //std::cout << '\r';
   for (auto row : layout) {
     for (auto cell : row) {
       std::cout << cell->getRep();

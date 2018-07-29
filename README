@@ -1,1 +1,7 @@
 A simluation for LeetCode Robot Room Cleaner problem.
+
+A room.txt file must have the correct format. Please check out room1.txt as an example.
+
+maximum width of the room.
+maximum depth of the room.
+the room layout.

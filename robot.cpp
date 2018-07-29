@@ -12,7 +12,7 @@ Robot::Robot(Direction dir, Room* room) : dir(dir), room(room) {}
 
 bool Robot::move() {
   usleep(sleepTime);
-  std::cout << "\x1B[2J\x1B[H";
+  clearScreen();
   room->displayRoom();
   return room->robotCanMove();
 }
@@ -37,6 +37,10 @@ void Robot::turnRight() {
     case Direction::down: dir = Direction::left; break;
     case Direction::right: dir = Direction::down; break;
   }
+}
+
+void Robot::clearScreen() {
+  std::cout << "\x1B[2J\x1B[H";
 }
 
 Direction Robot::getDirection() {

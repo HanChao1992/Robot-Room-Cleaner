@@ -28,6 +28,7 @@ public:
   void clean();
   Direction getDirection();
   void setDirection(Direction dir);
+  static void clearScreen();
 };
 
 #endif

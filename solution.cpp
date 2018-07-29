@@ -31,8 +31,3 @@ Coordinate Solution::getPos(Robot *rob, Coordinate curPos, bool forward) {
   }
   return curPos;
 }
-
-
-void Solution::clearScreen() {
-  std::cout << "\x1B[2J\x1B[H";
-}

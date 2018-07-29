@@ -15,7 +15,6 @@ private:
 public:
   void cleanRoom(Robot *rob, Room *room, Coordinate curPos);
   Coordinate getPos(Robot *rob, Coordinate curPos, bool forward);
-  static void clearScreen();
 };
 
 #endif
