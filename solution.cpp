@@ -9,8 +9,6 @@ void Solution::cleanRoom(Robot *rob, Room *room, Coordinate curPos) {
     if (!visited[newPos.x][newPos.y]) {
       if (rob->move()) {
         cleanRoom(rob, room, newPos);
-      } else {
-        visited[newPos.x][newPos.y] = true;
       }
     }
     rob->turnRight();
