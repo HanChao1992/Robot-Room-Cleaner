@@ -10,11 +10,10 @@ class Solution {
 private:
   std::unordered_map<int, std::unordered_map<int, bool>> visited;
 
-  //Coordinate curPos = Coordinate(0, 0);
-
 public:
-  void cleanRoom(Robot *rob, Room *room, Coordinate curPos);
-  Coordinate getPos(Robot *rob, Coordinate curPos, bool forward);
+  void cleanRoom(Robot *rob);
+  void cleanRoom(Robot *rob, Coordinate curPos);
+  Coordinate getNextPos(Robot *rob, Coordinate curPos);
 };
 
 #endif
